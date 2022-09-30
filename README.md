@@ -1,5 +1,7 @@
-# Technical-Documentation
+# Technical-Documentation - [Live Preview](https://c-language-documentation.vercel.app/)
 The C programming language documentation
+
+![image](https://user-images.githubusercontent.com/86703782/193224798-d92dd81e-87bc-49b9-b489-0b1c4e26384b.png)
 
 ## Backstory
 In my first and second semesters, I had to learn C and C++. During that time I bought a book titled [_The C Programming Language_](https://www.google.co.id/books/edition/The_C_Programming_Language/OpJ_0zpF7jIC?hl=en&gbpv=0), written by the creators of C programming language themself: Brian W. Kernighan and Dennis M. Ritchie. I barely touched that book, so I thought I could make good use of it by making documentation based on it.
@@ -23,4 +25,4 @@ Challenges:
 - Learned how to make fancier hover styles (you can see it at the navbar).
 
 ## Go see the page!
-See the page [here](https://codepen.io/danielemerald/full/KKavaor).
+See the page [here](https://c-language-documentation.vercel.app/).
