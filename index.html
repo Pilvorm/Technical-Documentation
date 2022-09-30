@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>C Language Documentation Page</title>
+
+    <link rel="icon" type="image/png" href="assets/clogos.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/clogos.png" sizes="16x16" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="query.css">
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+
+    <script>history.scrollRestoration = "manual"</script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <h1 id="navbar-header"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1200px-C_Programming_Language.svg.png"
+                alt="" class="img-align"> Language Documentation
+        </h1>
+        <ul>
+            <li><a class="nav-link" href="#Quick_Introduction">Quick Introduction</a></li>
+            <li><a class="nav-link" href="#Hello_World!">Hello World!</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+            <li><a class="nav-link" href="#Declaration">Declaration</a></li>
+            <li><a class="nav-link" href="#Operators">Operators</a></li>
+            <li><a class="nav-link" href="#If_Else">If Else</a></li>
+            <li><a class="nav-link" href="#Loops">Loops</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Quick_Introduction">
+            <header>Quick Introduction</header>
+            <article>
+                <p>
+                    C is a general-purpose programming language. It has been closely associated
+                    with the UNIX system where it was developed, since both the system and most of the programs that run
+                    on it are written in C. The language, however, is not tied to any one operating system or machine;
+                    and although it has been called "system programming language" because it is useful for writing
+                    compilers and operating systems, it has been used equally well to write major programs in many
+                    different domains.
+                </p>
+
+                <p>
+                    With C, our aim is tho show the essential elements of the language in real
+                    programs, but without getting bogged down in details, rules, and exceptions. We want to get you as
+                    quickly as possible to the point where you can write useful programs, and to do that we have to
+                    concentrate on the basics; variables and constants, data types, declarations, operators, statements,
+                    and loops.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Hello_World!">
+            <header>Hello World!</header>
+            <article>
+                <p>
+                    The only way to learn a new programming language is by writing programs in
+                    it. The first program to write is the same for all languages:
+                </p>
+                <pre class="snippet">Printing "hello world"</pre>
+                <p>
+                    This is the big hurdle; to leap over it you have to be able to create
+                    the program text somewhere, compile it successfully, load it, run it, and find out where your output
+                    went. In C, the program to print "hello, world"
+                    is:
+
+                    <pre class="pre"><button onclick="CopyToClipboard('hello'); changeToolText()" onmouseover="makeVisible()" onmouseout="revertToolText()" class="copy-btn"><i class="bi bi-clipboard" id="copy" ></i></button><div id="tool-text">Copy to clipboard</div><code class="pre-code" id="hello">#include &#x3c;stdio.h&#x3e;
+
+                        int main() {
+                        &nbsp;&nbsp;&nbsp;&nbsp;printf("Hello World\n");
+                        }
+                    </code></pre>
+                </p>
+                <p>
+                    Just how to run this program depends on the sysyem you are using. As a specific example, on the UNIX
+                    operating system you must create the program in a file whose name ends in ".c" such as hello.c, then
+                    compile it with the command
+                <pre class="snippet">cc hello.c</pre> and execute with
+                <pre class="snippet">a.out</pre> On a recommended program called <a
+                    href="https://sourceforge.net/projects/orwelldevcpp/" target="_blank" class="link">Dev C++</a>, you
+                can just simply press F11. If you haven't
+                botched anything, such as omitting a character or mispelling something, the compilation will proceed
+                silently.
+                </p>
+
+            </article>
+        </section>
+
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <article>
+                <p>In C, all variables must be declared before they are used, usually at the
+                    beginning of the function before any executable statements. A <i>declaration</i> announces, the
+                    properties of variables; it consists of a type name and a list of variables such
+                    as
+
+                <pre class="pre"><code class="pre-code">int fahr, celcius;
+                            int lower, upper, step;</code></pre>
+
+                </p>
+
+                <p>
+                    Variable names are made up of letters and digits; the first character must
+                    be a letter. The underscore "_" counts as a letter; it is sometimes useful for improving the
+                    readability of long variable names. It's wise to choose variable names that are related to the
+                    purpose of the variable, and that are unlikely to get mixed up typographically. We tend to use short
+                    names for local variables, especially loop indices, and longer names for external variables.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
+            <article>
+                <p> C provides several basic data types such as:</p>
+                <div class="data-type">
+                    <p>int</p>
+                    <p>integer</p>
+                </div>
+                <div class="data-type">
+                    <p>char</p>
+                    <p>character-a single byte</p>
+                </div>
+                <div class="data-type">
+                    <p>short</p>
+                    <p>short integer</p>
+                </div>
+                <div class="data-type">
+                    <p>long</p>
+                    <p>long integer</p>
+                </div>
+                <div class="data-type">
+                    <p>double</p>
+                    <p>double-precision floating point</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="main-section" id="Declaration">
+            <header>Declaration</header>
+            <article>
+                <p>
+                    All variables must be declared before use, although certain declarations can
+                    be made implicitly by context. A declaration specifies a type, and contain a list of one or more
+                    variables of that type, as in
+
+                <pre class="pre"><code class="pre-code">int lower, upper, step;
+                            char c, line[1000];
+                        </code></pre>
+
+                </p>
+                <p>
+                    Variables can be distributed among declarations in any fashion; the list above could equally well be
+                    written as
+                </p>
+
+                <pre class="pre"><code class="pre-code">int lower;
+                            int upper;
+                            int step;
+                            char c;
+                            char line[1000];
+                        </code></pre>
+
+                <p>
+                    This latter form takes more space, but is convenient for adding a comment to each declaration or for
+                    subsequent modifications.
+                </p>
+                <p>
+                    A Variable may also be initialized in its declaration. If the naem is
+                    followed by an equals sign and an expression, the expression serves as an initializer, as in
+
+                <pre class="pre"><code class="pre-code">char esc = '\\';
+                            int i = 0;
+                            int limit = MAXLINe + 1;
+                            float eps = 1.0e-5;
+                        </code></pre>
+
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Operators">
+            <header>Operators</header>
+            <article>
+                <p>
+                    The binary arithmetic operators are +, -, *, /, and the modulus operator %.
+                    Integer division truncates any fractional part. The expression
+                </p>
+                <pre class="snippet">x % y</pre>
+                <p>
+                    produces the remainder when x is divided by y, and thus is zero when y
+                    divides x
+                    exactly. For example, a year is a leap year if it is divisible by 4 but not by 100, except that
+                    years
+                    divisible by 400 <i>are</i> leap years. Therefore
+                </p>
+
+                <pre class="pre"><code class="pre-code">if((year % 4 == 0 && year % 100 != 0) || year & 400 == 0)
+                        &nbsp;&nbsp;&nbsp;&nbsp;printf("%d is a leap year\n", year);
+                        else
+                        &nbsp;&nbsp;&nbsp;&nbsp;printf("%d is not a leap year\n", year);
+                    </code></pre>
+
+
+                <p>
+                    The % operator cannot be applied to float or double. The direction of truncation for / and the sign
+                    of the result for % are machine-dependent for negative operands, as is the action taken on overflow
+                    or underflow. The binary + and - operators have the same precedence, which is lower than the
+                    precedence of *, /, and %, which is in turn lower than unary + and -.
+                </p>
+
+                <p>
+                    The relational operators are
+                <pre class="snippet">&gt;&#9;&gt;=&#9;&lt;&#9;=</pre>They all have the same precedence. Just below them
+                in precedence
+                are the equality operators:
+                <pre class="snippet">==&#9;!=</pre>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="If_Else">
+            <header>If Else</header>
+            <article>
+                <p>
+                    The if-else statement is used to express decisions. Formally, the syntax is
+                <pre class="pseudo"><code>if (<i>expression</i>)
+                        &nbsp;&nbsp;&nbsp;<i>statement<sub>1</sub></i>
+                        else
+                        &nbsp;&nbsp;&nbsp;<i>statement<sub>2</sub></i>
+                    </code></pre>
+                </p>
+                <p>
+                    where the else part is optional. The <i>expression</i> is evaluated; if it is true (that is, if
+                    <i>expression</i> has a non-zero value), <i>statement<sub>1</sub></i> is executed. If it is false
+                    (<i>expression</i> is zero) and if there is an else part, <i>statement<sub>2</sub></i> is executed
+                    instead.
+                </p>
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Loops">
+            <header>Loops</header>
+            <article>
+                <p>Take a look at this example.</p>
+                <pre class="pseudo"><code>while (<i>expression</i>)
+                    &nbsp;&nbsp;&nbsp;<i>statement</i></code></pre>
+                <p>
+                    In the code, the <i>expression</i> is evaluated. If it is non-zero, <i>statement</i> is executed and
+                    <i>expression</i> is re-evaluated. This cycle continues until <i>expression</i> becomes zero, at
+                    which point execution resumes after <i>statement</i>.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p id="note">
+                    This documentation is based on the book titled 'The C Programming Language' by the creators of C
+                    programming language
+                    themself: Brian W. Kernighan and Dennis M. Ritchie.
+                </p>
+
+                <a href="https://www.google.co.id/books/edition/The_C_Programming_Language/OpJ_0zpF7jIC?hl=en&gbpv=0"
+                    target="_blank" class="link-arrow">
+                    Learn more about C programming language <span><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-arrow-right img-align" viewBox="0 0 16 16"
+                            id="learn-arrow">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                        </svg></span>
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
